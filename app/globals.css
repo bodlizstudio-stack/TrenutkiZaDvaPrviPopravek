@@ -136,9 +136,9 @@
   @supports (animation-timeline: view()) {
     .rise,
     .reveal {
-      animation: fade-through linear both;
+      animation: fade-in-view linear both;
       animation-timeline: view();
-      animation-range: entry 0% exit 100%;
+      animation-range: entry 0% entry 55%;
     }
   }
 }
@@ -154,22 +154,14 @@
   }
 }
 
-@keyframes fade-through {
-  0% {
+@keyframes fade-in-view {
+  from {
     opacity: 0;
-    transform: translateY(18px);
+    transform: translateY(14px);
   }
-  10% {
+  to {
     opacity: 1;
     transform: none;
-  }
-  90% {
-    opacity: 1;
-    transform: none;
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-12px);
   }
 }
 
@@ -300,7 +292,7 @@
 }
 
 ::view-transition-new(root) {
-  animation: 0.72s linear both leaf-under;
+  animation: none;
 }
 
 html[data-turn="prev"]::view-transition-old(root) {
@@ -348,12 +340,9 @@ html[data-turn="prev"]::view-transition-old(root) {
     transform: perspective(1400px) rotateY(0deg);
     opacity: 1;
   }
-  48% {
-    opacity: 1;
-  }
   100% {
     transform: perspective(1400px) rotateY(-86deg);
-    opacity: 0;
+    opacity: 1;
   }
 }
 
@@ -362,24 +351,8 @@ html[data-turn="prev"]::view-transition-old(root) {
     transform: perspective(1400px) rotateY(0deg);
     opacity: 1;
   }
-  48% {
-    opacity: 1;
-  }
   100% {
     transform: perspective(1400px) rotateY(86deg);
-    opacity: 0;
-  }
-}
-
-@keyframes leaf-under {
-  0%,
-  16% {
-    opacity: 0;
-  }
-  68% {
-    opacity: 1;
-  }
-  100% {
     opacity: 1;
   }
 }

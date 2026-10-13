@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/Button";
 
 export function BookPreview() {
   return (
-    <section id="predogled" className="reveal scroll-mt-24 bg-ivory py-14 md:py-20">
+    <section id="predogled" className="scroll-mt-24 bg-ivory py-14 md:py-20">
       <div className="container-wide">
         <SectionHeading
           eyebrow="Notranjost"
